@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AAKASH KUMAR Resume</title>
+  <style>
+    :root {
+      --navy: #0d2d4f;
+      --navy-2: #1d3f67;
+      --blue: #0e5ca8;
+      --line: #d6dfe9;
+      --text: #1e2430;
+      --muted: #4a586a;
+      --soft: #f6f9fc;
+      --gold: #f4ae2a;
+      --orange: #ff7a00;
+      --green: #2aa86b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f2f4f6;
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1120px;
+      background: #ffffff;
+      min-height: 1500px;
+      border-top: 8px solid var(--navy);
+      border-left: 1px solid #dfe7ee;
+      border-right: 1px solid #dfe7ee;
+      border-bottom: 1px solid #dfe7ee;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      padding: 0 20px 20px;
+    }
+
+    .top-line {
+      height: 6px;
+      background: linear-gradient(to right, var(--navy), var(--blue));
+      margin: 0 -20px;
+    }
+
+    .header {
+      padding: 26px 10px 15px;
+      border-bottom: 2px solid var(--line);
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: var(--navy);
+      text-transform: uppercase;
+      display: inline-block;
+    }
+
+    h1 .light {
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .subtitle {
+      margin-top: 6px;
+      color: var(--navy);
+      font-size: 0.96rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      opacity: 0.9;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px;
+      margin-top: 18px;
+      color: var(--navy);
+      font-size: 0.9rem;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .contact-item + .contact-item {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .contact-item + .contact-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 18px;
+      background: #a3b0c1;
+    }
+
+    .icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--blue), var(--navy));
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,0.35);
+    }
+
+    .section {
+      padding: 16px 10px 0;
+      position: relative;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 12px;
+    }
+
+    .section-title .badge {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 2px;
+      background: var(--line);
+      margin-left: 12px;
+    }
+
+    .summary {
+      font-size: 1.04rem;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 10px;
+      padding-left: 2px;
+    }
+
+    .edu-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .edu-item {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 18px;
+    }
+
+    .edu-item::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--navy);
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .edu-title {
+      font-size: 1.1rem;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .edu-date {
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .edu-sub {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-top: 2px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 26px;
+      align-items: start;
+    }
+
+    .skills-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      column-gap: 18px;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    .skill-row strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .cert-soft {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 30px;
+      align-items: start;
+      margin-top: 8px;
+    }
+
+    .cert-box,
+    .soft-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      min-height: 90px;
+    }
+
+    .cert-box .mini {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    .cert-text {
+      color: var(--text);
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    .cert-text strong {
+      color: var(--navy);
+      font-size: 1.05rem;
+    }
+
+    .logo-mark {
+      display: inline-block;
+      margin-left: 8px;
+      background: linear-gradient(135deg, #3ac5a9, #0d7dff);
+      color: white;
+      font-weight: 800;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      vertical-align: middle;
+    }
+
+    .soft-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(150px, 1fr));
+      gap: 8px 16px;
+      margin-top: 8px;
+      font-size: 0.98rem;
+      color: var(--text);
+    }
+
+    .soft-list li {
+      position: relative;
+      padding-left: 14px;
+    }
+
+    .soft-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--navy);
+      font-size: 1.3rem;
+      line-height: 1;
+    }
+
+    .project-box {
+      margin-top: 10px;
+      padding-left: 12px;
+    }
+
+    .project-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .project-box ul {
+      margin-left: 18px;
+      line-height: 1.75;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    @media (max-width: 760px) {
+      .skills-grid,
+      .cert-soft {
+        grid-template-columns: 1fr;
+      }
+
+      .skill-row {
+        grid-template-columns: 1fr;
+      }
+
+      .soft-list {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-row {
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="top-line"></div>
+
+    <header class="header">
+      <h1>AAKASH <span class="light">KUMAR</span></h1>
+      <div class="subtitle">Aspiring Data Analyst | AI Enthusiast</div>
+
+      <div class="contact-row">
+        <div class="contact-item"><span class="icon">☎</span> +91 7088370218</div>
+        <div class="contact-item"><span class="icon">✉</span> aakashkumar708837@gmail.com</div>
+        <div class="contact-item"><span class="icon">⌂</span> Shamli, Uttar Pradesh, India</div>
+        <div class="contact-item"><span class="icon">in</span> linkedin.com/in/aakash-kumar-36a045284</div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="section-title"><span class="badge">◔</span> Summary</div>
+      <p class="summary">
+        Aspiring Data Analyst with strong foundation in SQL, Basic Python, Excel, and Power BI. Familiar with data cleaning,
+        analysis, data visualization and reporting. Passionate about Artificial Intelligence and emerging technologies, and eager
+        to learn and contribute to data-driven solutions.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><span class="badge">◔</span> Education</div>
+
+      <ul class="edu-list">
+        <li class="edu-item">
+          <div class="edu-row">
+            <div class="edu-title">Master of Computer Applications (MCA)</div>
+            <div class="edu-date">Aug '26 – Present</div>
+          </div>
+          <div class="edu-sub">Kurukshetra University, Kurukshetra</div>
+        </li>
+
+        <li class="edu-item">
+          <div class="edu-row">
+            <div class="edu-title">Bachelor of Computer Applications (BCA)</div>
+            <div class="edu-date">Aug '23 – Jun '26</div>
+          </div>
+          <div class="edu-sub">Maa Shakumbhari University, Saharanpur</div>
+          <div class="edu-sub">CGPA: 6.83</div>
+        </li>
+
+        <li class="edu-item">
+          <div class="edu-row">
+            <div class="edu-title">Intermediate</div>
+            <div class="edu-date">2023</div>
+          </div>
+          <div class="edu-sub">State Board Of Uttar Pradesh</div>
+          <div class="edu-sub">R.S.S.I.C JHINJHANA SHAMLI</div>
+        </li>
+
+        <li class="edu-item">
+          <div class="edu-row">
+            <div class="edu-title">High School</div>
+            <div class="edu-date">2021</div>
+          </div>
+          <div class="edu-sub">State Board Of Uttar Pradesh</div>
+          <div class="edu-sub">R.S.S.I.C JHINJHANA SHAMLI</div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><span class="badge">◔</span> Skills</div>
+
+      <div class="skills-grid">
+        <div class="skills-col">
+          <div class="skill-row"><strong>Programming &amp; Query Languages</strong> <span>Basic Python, SQL, MySQL</span></div>
+          <div class="skill-row"><strong>Data Visualization</strong> <span>Power BI, Microsoft Excel</span></div>
+          <div class="skill-row"><strong>Libraries</strong> <span>Numpy, pandas, Matplotlib</span></div>
+          <div class="skill-row"><strong>Concepts</strong> <span>Data Cleaning, ETL Tools, KPI Reporting, Dashboarding</span></div>
+          <div class="skill-row"><strong>Tools</strong> <span>Power BI Desktop, Excel Tables And Charts</span></div>
+        </div>
+
+        <div class="skills-col">
+          <div class="skill-row"><strong>Concepts</strong> <span>Statistics, Data Modeling, Reporting</span></div>
+          <div class="skill-row"><strong>Software</strong> <span>MS Excel, Power BI, MySQL, Google Sheets</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="cert-soft">
+        <div>
+          <div class="section-title" style="margin-bottom: 12px;"><span class="badge">◔</span> Certification</div>
+          <div class="cert-box">
+            <div class="mini">✓</div>
+            <div class="cert-text">
+              <strong>SQL Training (Basic to Advanced)</strong><br>
+              Simplelearn<br>
+              Completed professional training and hands-on projects in SQL.
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-title" style="margin-bottom: 12px;"><span class="badge">◔</span> Soft Skills</div>
+          <ul class="soft-list">
+            <li>Analytical Thinking</li>
+            <li>Communication</li>
+            <li>Problem Solving</li>
+            <li>Quick Learner</li>
+            <li>Teamwork</li>
+            <li>Time Management</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><span class="badge">◔</span> Project</div>
+
+      <div class="project-box">
+        <div class="project-title">E-Health Management System</div>
+        <ul>
+          <li>Developed a web-based E-Health Management System to manage patient records, doctor details, appointments, and medical information digitally.</li>
+          <li>Implemented modules for patient registration, doctor management, appointment booking, login authentication, and record updates.</li>
+          <li>Used PHP and MySQL for backend development and database management, with HTML, CSS, and JavaScript for the user interface.</li>
+          <li>Improved accessibility and reduced manual record-handling through centralized digital data management.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
